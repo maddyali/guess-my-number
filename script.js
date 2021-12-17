@@ -10,7 +10,7 @@ document.querySelector('.guess').value = 23;
 console.log(document.querySelector('.guess').value);
 */
 // Secret number
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // Score
 let score = 20;
 
@@ -53,4 +53,17 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+});
+// Select the element with the 'again' class and attach a click event handler
+document.querySelector('.again').addEventListener('click', function () {
+  // Restore initial values of the score and number variables
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  //   Restore initial conditions of the message, number, score and guess input field
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
 });
