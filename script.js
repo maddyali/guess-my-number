@@ -13,6 +13,8 @@ console.log(document.querySelector('.guess').value);
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // Score
 let score = 20;
+// Highscore
+let highScore = 0;
 
 // Scenario: there is no input
 document.querySelector('.check').addEventListener('click', function () {
@@ -30,6 +32,10 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#60b347';
 
     document.querySelector('.number').style.width = '30rem';
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
+    }
   }
   //   Scenario: guess is too high
   else if (guess > secretNumber) {
