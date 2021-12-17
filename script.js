@@ -13,7 +13,6 @@ console.log(document.querySelector('.guess').value);
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 // Score
 let score = 20;
-document.querySelector('.number').textContent = secretNumber;
 
 // Scenario: there is no input
 document.querySelector('.check').addEventListener('click', function () {
@@ -26,6 +25,7 @@ document.querySelector('.check').addEventListener('click', function () {
   //   Scenario: player wins
   else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'Correct Number!';
+    document.querySelector('.number').textContent = secretNumber;
 
     document.querySelector('body').style.backgroundColor = '#60b347';
 
